@@ -1,0 +1,337 @@
+/*
+0-600px: Phone
+600 - 900px:    Tablet portrait;
+900 - 1200px:   Tablet landscape;
+1200 - 1800px:  Our basic styles;
+1800px + :      Big Desktop;
+
+//Breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-destop
+
+Order: Base + typography > general layout + grids > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  height: 100vh;
+  background-image: url(../img/background.png);
+  background-size: cover;
+  background-position: top;
+  box-sizing: border-box;
+  background-attachment: fixed;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translate(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translate(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.heading-primary {
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 1rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  animation: moveInLeft 600ms ease-out;
+}
+@media (max-width: 37.5em) {
+  .heading-primary--main {
+    font-size: 4rem;
+  }
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 7.5rem;
+  font-weight: 800;
+  color: #00f69b;
+  line-height: 1;
+  animation: moveInLeft 600ms ease-out;
+}
+@media (max-width: 37.5em) {
+  .heading-primary--sub {
+    font-size: 6rem;
+  }
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  animation: moveInLeft 600ms ease-out;
+  width: 70%;
+}
+@media (max-width: 56.25em) {
+  .paragraph {
+    width: 100%;
+  }
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-center-left {
+  text-align: left !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+@media (max-width: 56.25em) {
+  .u-margin-bottom-medium {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 8rem !important;
+}
+@media (max-width: 56.25em) {
+  .u-margin-bottom-large {
+    margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-top-large {
+  margin-top: 8rem !important;
+}
+
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.btn, .btn:link, .btn:visited {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 500ms;
+  position: relative;
+  width: 50%;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 56.25em) {
+  .btn, .btn:link, .btn:visited {
+    width: 100%;
+  }
+}
+.btn:hover {
+  box-shadow: 0 0rem 2rem rgba(0, 246, 155, 0.5);
+}
+.btn:active, .btn:focus {
+  outline: none;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 400ms;
+}
+.btn--green {
+  background-color: #00F69B;
+  color: #141627;
+}
+.btn--green::after {
+  background-color: #00F69B;
+}
+.btn--animated {
+  animation: moveInBottom 400ms ease-out 750ms;
+  animation-fill-mode: backwards;
+}
+
+.form {
+  animation: moveInLeft 600ms ease-out;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.form__input {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 50%;
+  display: block;
+  transition: all 0.3s;
+}
+@media (max-width: 56.25em) {
+  .form__input {
+    width: 100%;
+  }
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #00F69B;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+.form__input::-webkit-input-placeholder {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+.form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.header__logo-box {
+  padding: 4rem;
+}
+.header__logo {
+  height: 5rem;
+}
+.header__phone-image {
+  animation: moveInRight 600ms ease-out;
+  text-align: center;
+  padding: 2rem;
+}
+.header__phone-image img {
+  height: 50rem;
+}
+.header__carousel .company-slider img {
+  max-width: 200px;
+  padding: 0 20px 20px;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+@media (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row [class^=col-] {
+  float: left;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
+}
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+}
+.row .col-1-of-4 {
+  width: calc((100% - 3 *6rem) / 4);
+}
+.row .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+.row .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+}
+
+/*# sourceMappingURL=main.css.map */

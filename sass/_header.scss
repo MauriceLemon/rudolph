@@ -1,0 +1,29 @@
+.header {
+
+    &__logo-box {
+        padding: 4rem;
+    }
+
+    &__logo {
+        height: 5rem;
+    }
+
+    &__phone-image {
+        animation: moveInRight 600ms ease-out;
+        text-align: center;
+        padding: 2rem;
+
+        img {
+            height: 50rem;
+        }
+    }
+
+    &__carousel {
+        .company-slider  {
+            img {
+                max-width:200px;
+                padding:0 20px 20px;
+            }
+        }
+    }
+}

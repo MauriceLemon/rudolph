@@ -1,0 +1,48 @@
+.form {
+
+    animation: moveInLeft 600ms ease-out;
+
+    &__group:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: inherit;
+        color: $color-white;
+        padding: 1.5rem 2rem;
+        border-radius: $border-radius-large;
+        background-color: rgba($color-white, .4);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 50%;
+        display: block;
+        transition: all .3s;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadow-small;
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-error;
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 400;
+            color: rgba($color-white, .6);;
+        }
+    }
+
+    &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-2rem);
+    }
+}

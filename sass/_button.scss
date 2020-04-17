@@ -1,0 +1,61 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        font-weight: 800;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: $border-radius-large;
+        transition: all 500ms;
+        position: relative;
+        width: 50%;
+
+        //Change for <button> element
+        border: none;
+        cursor: pointer;
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0rem 2rem rgba($color-primary, .5);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: $shadow-extra-small;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: $border-radius-large;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 400ms;
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-secondary-dark;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
+    &--animated {
+        animation: moveInBottom 400ms ease-out 750ms;
+        animation-fill-mode: backwards;
+    }
+}

@@ -115,6 +115,14 @@ body {
   animation: moveInLeft 600ms ease-out;
   width: 70%;
 }
+.paragraph a {
+  color: #00F69B;
+  text-decoration: none;
+  transition: all 400ms;
+}
+.paragraph a:hover {
+  color: #00aa6b;
+}
 @media (max-width: 56.25em) {
   .paragraph {
     width: 100%;

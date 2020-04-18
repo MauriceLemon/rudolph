@@ -8,7 +8,7 @@
         padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: $border-radius-large;
-        transition: all 500ms;
+        transition: all 350ms;
         position: relative;
         width: 50%;
 
@@ -22,7 +22,7 @@
     }
 
     &:hover {
-        box-shadow: 0 0rem 2rem rgba($color-primary, .5);
+        box-shadow: 0 0 2rem rgba($color-primary, 1);
     }
 
     &:active,

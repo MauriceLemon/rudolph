@@ -76,11 +76,11 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .heading-primary {
-  color: rgba(255, 255, 255, 0.8);
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 1rem;
@@ -169,7 +169,7 @@ body {
   padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
-  transition: all 500ms;
+  transition: all 350ms;
   position: relative;
   width: 50%;
   border: none;
@@ -181,7 +181,7 @@ body {
   }
 }
 .btn:hover {
-  box-shadow: 0 0rem 2rem rgba(0, 246, 155, 0.5);
+  box-shadow: 0 0 2rem #00f69b;
 }
 .btn:active, .btn:focus {
   outline: none;

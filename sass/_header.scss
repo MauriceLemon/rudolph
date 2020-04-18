@@ -11,6 +11,8 @@
     &__packages {
         position: relative;
         z-index: 99;
+        animation: fadeIn 1500ms ease-out 600ms;
+        animation-fill-mode: backwards;
 
         &--1 {
             position: absolute;
@@ -91,6 +93,8 @@
     }
 
     &__carousel {
+        animation: moveInBottom 600ms ease-out;
+
         .company-slider  {
             padding: 0 5rem;
 

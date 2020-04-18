@@ -280,6 +280,70 @@ body {
 .header__logo {
   height: 5rem;
 }
+.header__packages {
+  position: relative;
+  z-index: 99;
+}
+.header__packages--1 {
+  position: absolute;
+  top: 0;
+  right: -5rem;
+}
+.header__packages--1 img {
+  height: 5rem;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 56.25em) {
+  .header__packages--1 {
+    right: 5rem;
+  }
+}
+.header__packages--2 {
+  position: absolute;
+  top: 15rem;
+  left: -5rem;
+}
+.header__packages--2 img {
+  height: 7rem;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 56.25em) {
+  .header__packages--2 {
+    left: 2rem;
+  }
+}
+.header__packages--3 {
+  position: absolute;
+  top: 25rem;
+  right: -4rem;
+}
+.header__packages--3 img {
+  height: 10rem;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 56.25em) {
+  .header__packages--3 {
+    right: 3rem;
+  }
+}
+.header__packages--4 {
+  position: absolute;
+  top: 45rem;
+  left: -5rem;
+}
+.header__packages--4 img {
+  height: 12rem;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+@media (max-width: 56.25em) {
+  .header__packages--4 {
+    left: 1rem;
+  }
+}
 .header__phone-image {
   animation: moveInRight 600ms ease-out;
   text-align: center;
@@ -288,10 +352,26 @@ body {
 .header__phone-image img {
   height: 50rem;
   animation: translateY 10s infinite linear;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.5));
 }
-.header__carousel .company-slider img {
-  max-width: 200px;
-  padding: 0 20px 20px;
+.header__carousel .company-slider {
+  padding: 0 8rem;
+}
+.header__carousel .company-slider .company-items {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+}
+.header__carousel .company-slider .company-items p {
+  font-size: 1.2rem;
+  padding: 0 2rem;
+}
+.header__carousel .company-slider .company-items p span {
+  display: block;
+}
+.header__carousel .company-slider .company-items .fal {
+  font-size: 3.5rem;
+  color: #00F69B;
 }
 
 .row {

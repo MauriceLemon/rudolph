@@ -8,6 +8,75 @@
         height: 5rem;
     }
 
+    &__packages {
+        position: relative;
+        z-index: 99;
+
+        &--1 {
+            position: absolute;
+            top: 0;
+            right: -5rem;
+
+            img {
+                height: 5rem;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 10px rgba(#000, .3));
+            }
+
+            @include respond(tab-port) {
+                right: 5rem;
+            }
+        }
+
+        &--2 {
+            position: absolute;
+            top: 15rem;
+            left: -5rem;
+
+            img {
+                height: 7rem;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 10px rgba(#000, .3));
+            }
+
+            @include respond(tab-port) {
+                left: 2rem;
+            }
+        }
+
+        &--3 {
+            position: absolute;
+            top: 25rem;
+            right: -4rem;
+
+            img {
+                height: 10rem;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 10px rgba(#000, .3));
+            }
+
+            @include respond(tab-port) {
+                right: 3rem;
+            }
+        }
+
+        &--4 {
+            position: absolute;
+            top: 45rem;
+            left: -5rem;
+
+            img {
+                height: 12rem;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 10px rgba(#000, .3));
+            }
+
+            @include respond(tab-port) {
+                left: 1rem;
+            }
+        }
+    }
+
     &__phone-image {
         animation: moveInRight 600ms ease-out;
         text-align: center;
@@ -16,14 +85,32 @@
         img {
             height: 50rem;
             animation:translateY 10s infinite linear;
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+            filter: drop-shadow(5px 5px 30px rgba(#000, .5));
         }
     }
 
     &__carousel {
         .company-slider  {
-            img {
-                max-width:200px;
-                padding:0 20px 20px;
+            padding: 0 8rem;
+
+            .company-items {
+                color: rgba($color-white, .8);
+                display: flex;
+
+                p {
+                    font-size: 1.2rem;
+                    padding: 0 2rem;
+
+                    span {
+                        display: block;
+                    }
+                }
+
+                .fal {
+                    font-size: 3.5rem;
+                    color: $color-primary;
+                }
             }
         }
     }

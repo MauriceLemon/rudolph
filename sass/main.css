@@ -384,8 +384,12 @@ body {
   z-index: 1;
 }
 .header__effect img {
-  transform: translate(-6rem, -21rem) rotate(8deg);
-  filter: hue-rotate(90deg);
+  transform: translate(-3rem, -10rem);
+}
+@media (max-width: 56.25em) {
+  .header__effect {
+    margin-bottom: 6rem;
+  }
 }
 .header__carousel {
   animation: moveInBottom 600ms ease-out;

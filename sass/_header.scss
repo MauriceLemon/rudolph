@@ -99,9 +99,13 @@
         animation: moveInRight 600ms ease-out;
         height: 10px;
         z-index: 1;
+
         img {
-            transform: translate(-6rem, -21rem) rotate(8deg);
-            filter: hue-rotate(90deg);
+            transform: translate(-3rem, -10rem);
+        }
+
+        @include respond(tab-port) {
+            margin-bottom: 6rem;
         }
     }
 

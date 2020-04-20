@@ -80,15 +80,27 @@
     }
 
     &__phone-image {
+        position: relative;
         animation: moveInRight 600ms ease-out;
         text-align: center;
         padding: 2rem;
+        z-index: 2;
 
         img {
             height: 50rem;
             animation:translateY 10s infinite linear;
             -webkit-filter: drop-shadow(5px 5px 5px #222);
             filter: drop-shadow(5px 5px 30px rgba(#000, .5));
+        }
+    }
+
+    &__effect {
+        position: relative;
+        animation: moveInRight 600ms ease-out;
+        height: 10px;
+        z-index: 1;
+        img {
+            transform: translate(-6rem, -21rem) rotate(8deg);
         }
     }
 

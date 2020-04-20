@@ -385,6 +385,7 @@ body {
 }
 .header__effect img {
   transform: translate(-6rem, -21rem) rotate(8deg);
+  filter: hue-rotate(90deg);
 }
 .header__carousel {
   animation: moveInBottom 600ms ease-out;

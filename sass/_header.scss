@@ -101,6 +101,7 @@
         z-index: 1;
         img {
             transform: translate(-6rem, -21rem) rotate(8deg);
+            filter: hue-rotate(90deg);
         }
     }
 

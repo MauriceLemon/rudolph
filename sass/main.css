@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 0-600px: Phone
 600 - 900px:    Tablet portrait;
@@ -286,17 +287,91 @@ body {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.6);
 }
-.form__label {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-2rem);
-}
 
+.header {
+  /* Sponsor Widget CSS Start */
+  /* Sponsor Widget CSS End */
+}
 .header__logo-box {
   padding: 4rem;
 }
 .header__logo {
   height: 5rem;
+}
+.header__sponsor-widget {
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  background: rgba(34, 41, 82, 0.9);
+  padding: 20px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  z-index: 999;
+}
+.header__sponsor-widget--fixed {
+  position: fixed;
+  bottom: 14%;
+  right: 3%;
+  width: auto;
+}
+.header__sponsor-widget .sponsor-widget__title {
+  display: inline-block;
+  float: left;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+.header__sponsor-widget .sponsor-widget__close {
+  display: inline-block;
+  float: right;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #00F69B;
+  cursor: pointer;
+  margin-top: -10зч;
+}
+.header__sponsor-widget .sponsor-widget__content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__details ul {
+  padding: 0;
+  margin: 10px 0 0 10px;
+  list-style-type: none;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li p, .header__sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li a {
+  display: inline-block;
+  margin: 0;
+  font-size: 14px;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__details ul li img {
+  height: 1.2rem;
+  margin-right: 3px;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__image {
+  width: 55px;
+}
+.header__sponsor-widget .sponsor-widget__content .sponsor-widget__image img {
+  border-radius: 50px;
+  width: 55px;
+}
+@media (max-width: 75em) {
+  .header__sponsor-widget--fixed {
+    bottom: 23%;
+  }
+}
+@media (max-width: 56.25em) {
+  .header__sponsor-widget--fixed {
+    position: relative;
+    margin-bottom: 4rem;
+    right: 0;
+  }
 }
 .header__packages {
   position: relative;
@@ -368,7 +443,7 @@ body {
   position: relative;
   animation: moveInRight 600ms ease-out;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   z-index: 2;
 }
 .header__phone-image img {
@@ -388,7 +463,11 @@ body {
 }
 @media (max-width: 56.25em) {
   .header__effect {
+    padding-left: 4rem;
     margin-bottom: 6rem;
+  }
+  .header__effect img {
+    transform: translate(-3rem, -10rem) rotate(-2deg);
   }
 }
 .header__carousel {

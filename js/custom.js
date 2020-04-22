@@ -1,6 +1,12 @@
 (function($) {
 	'use strict';
-	jQuery(document).on('ready', function(){
+	$(document).ready(function(){
+
+		//Sponsor widget
+		$(".js-widget-close").on("click", function (event) {
+			event.preventDefault();
+			$(".header__sponsor-widget--fixed").hide();
+		});
 	
 		//Company Slider JS
 		$('.company-slider').owlCarousel({

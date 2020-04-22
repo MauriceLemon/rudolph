@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' +l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window,document,'script','dataLayer','GTM-TV2T3RM');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -31,6 +48,11 @@
     <title>CROWD1 - Schmeer-Team | Начните зарабатывать сегодня</title>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV2T3RM" height="0" width="0" style="display:none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="header">
         <div class="header__logo-box">
             <img src="img/logo.png" alt="Logo" class="header__logo">
@@ -51,20 +73,189 @@
                             <a href="https://crowd1.com/" target="_blank">веб-сайте</a>.
                         </p>
                     </div>
-                    <form action="#" class="form">
+                    <form class="form" enableclientvalidation action="/ru/register/ajaxregister/partnerRegisterValidate" method="post" id="yw0">
+                        <div style="display:none"><input type="hidden" value="223256a39cc7dd1b1d5396f2b802063adeb93be6" name="YII_CSRF_TOKEN"></div>
+
                         <div class="form__group">
-                            <input type="text" class="form__input" placeholder="Введите имя" id="name" required>
-                            <label for="name" class="form__label">Введите имя</label>
+                            <input type="text" class="form__input" placeholder="Введите имя" size="56" maxlength="56" required name="UsersTemp[username]" id="UsersTemp_username">
+                            <label for="UsersTemp_username" class="form__label error name-input-error">&nbsp;</label>
                         </div>
+
                         <div class="form__group">
-                            <input type="email" class="form__input" placeholder="Введите email" id="email" required>
-                            <label for="email" class="form__label">Введите email</label>
+                            <input type="email" class="form__input" placeholder="Введите email" size="50" maxlength="50" required name="UsersTemp[email]" id="UsersTemp_email">
+                            <label for="UsersTemp_email" class="form__label error email-input-error">&nbsp;</label>
                         </div>
+
+                        <input type="hidden" value="2" name="UsersTemp[sponsor_id]" id="UsersTemp_sponsor_id">
                         <div class="form__group">
-                            <button class="btn btn--green">Хочу зарабатывать</button>
+                            <button type="button" class="btn btn--green" onclick="submitForTemplateForm(this);">Хочу в команду</button>
                         </div>
+
+                        <div style="display: none;" class="toolTip form1">
+                            <div class="errorMessage" id="UsersTemp_username_em_" style="display:none"></div>
+                            <div class="errorMessage" id="UsersTemp_email_em_" style="display:none"></div>
+                        </div>
+
+                        <script type="text/javascript">
+                            function getCookie(name) {
+                                var matches = document.cookie.match(new RegExp(
+                                    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                                ));
+                                return matches ? decodeURIComponent(matches[1]) : undefined;
+                            }
+                            (function cookeIdForm(){
+                                var nowCooke = getCookie('cookeIdForm');
+                                var date = new Date(new Date().getTime() + 60 * 3000);
+                                var formEl = document.getElementById('yw0');
+                                if(nowCooke === undefined){
+                                    document.cookie='cookeIdForm=1; path=/; expires=' + date.toUTCString();
+                                    nowCooke = 0;
+                                }else{
+                                    nowCooke = Number(nowCooke);
+                                    document.cookie = 'cookeIdForm=' + (nowCooke + 1) + '; path=/; expires=' + date.toUTCString();
+                                }
+                                formEl.id = 'yw' + String(nowCooke);
+                            })();
+                            document.addEventListener('DOMContentLoaded', function(){
+                                var delCooke = getCookie('cookeIdForm');
+                                var dateNull = new Date(0);
+                                if(delCooke !== undefined)
+                                    document.cookie = 'cookeIdForm=; path=/; expires=' + dateNull.toUTCString();
+                            });
+
+                            function createCookie(name, value, days) {
+                                var expires;
+
+                                if (days) {
+                                    var date = new Date();
+                                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                                    expires = "; expires=" + date.toGMTString();
+                                } else {
+                                    expires = "";
+                                }
+                                document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+                            }
+
+                        </script>
+                        <script>
+                            function submitForTemplateForm(el) {
+                                var elForm = el;
+                                var nameEl = undefined;
+                                var emailEl = undefined;
+                                while(elForm != undefined && elForm.nodeName.toUpperCase() != 'FORM'){
+                                    elForm = elForm.parentNode;
+                                    if(elForm.nodeName.toUpperCase() == 'BODY') elForm = undefined;
+                                }
+                                if (elForm != undefined)
+                                    if(elForm.getElementsByTagName('input').length > 0)
+                                        for(var i = 0; i < elForm.getElementsByTagName('input').length; i++)
+                                            if(elForm.getElementsByTagName('input')[i].hasAttribute('name')){
+                                                if(elForm.getElementsByTagName('input')[i].getAttribute('name') == "UsersTemp[username]")
+                                                    nameEl = elForm.getElementsByTagName('input')[i].value;
+                                                if(elForm.getElementsByTagName('input')[i].getAttribute('name') == "UsersTemp[email]")
+                                                    emailEl = elForm.getElementsByTagName('input')[i].value;
+                                            }
+                                if(nameEl != undefined && emailEl != undefined){
+                                    if(elForm.getElementsByClassName('name-input-error').length > 0)elForm.getElementsByClassName('name-input-error')[0].innerHTML = '&nbsp;';
+                                    if(elForm.getElementsByClassName('email-input-error').length > 0)elForm.getElementsByClassName('email-input-error')[0].innerHTML = '&nbsp;';
+
+                                    var partnerMailerSettings = '';
+                                    var str = "/partner/admin";
+                                    var sub = str.substr((Number(str.indexOf('partner')) + 7), (Number(str.indexOf('/',(Number(str.indexOf('partner')) + 7))) - (Number(str.indexOf('partner')) + 7)));
+
+                                    if(sub.length === 0)
+                                    {
+                                        partnerMailerSettings = 'first';
+                                    }
+                                    else
+                                    {
+                                        partnerMailerSettings = sub;
+                                    }
+
+                                    $.ajax({
+                                        url: '/register/ajaxregister/partnerRegisterValidate',
+                                        type: 'POST',
+                                        dataType: 'JSON',
+                                        data: {
+                                            'ajax' : true,
+                                            'UsersTemp': {
+                                                'email' : emailEl,
+                                                'username' : nameEl,
+                                                'partnerMailerSettings' : partnerMailerSettings,
+                                            },
+
+                                            'YII_CSRF_TOKEN'  : "223256a39cc7dd1b1d5396f2b802063adeb93be6"
+                                        },
+                                        success: function(data)
+                                        {
+
+                                            if($.type( data ) === "object")
+                                            {
+
+                                                $.each(data, function(name, errors) {
+                                                    $.each(errors, function(key, error) {
+                                                        if(name == "UsersTemp_username")
+                                                            if(elForm.getElementsByClassName('name-input-error'))
+                                                                elForm.getElementsByClassName('name-input-error')[0].innerHTML = '<div>' + error + '</div>';
+                                                        if(name == "UsersTemp_email")
+                                                            if(elForm.getElementsByClassName('email-input-error'))
+                                                                elForm.getElementsByClassName('email-input-error')[0].innerHTML = '<div>' + error + '</div>';
+                                                    });
+
+                                                });
+                                                return false;
+
+                                            }
+                                            else
+                                            {
+                                                createCookie("landing_redirect", partnerMailerSettings , '1');
+                                                document.location.href = "/site/login#registration";
+                                            }
+
+
+                                        },
+                                        error: function(xhr)
+                                        {
+                                            alert('Ошибка запроса')
+                                        }
+                                    });
+                                } else {
+                                    alert("При отправке запроса произошла ошибка");
+                                }
+                            }
+                        </script>
                     </form>
+                    <div style="display: none">
+                        {$subscribeform}
+                    </div>
                 </div>
+
+                <!-- Sponsor Widget Section Start -->
+                <div id="sponsor-widget" class="header__sponsor-widget header__sponsor-widget--fixed">
+                    <div class="sponsor-widget__header">
+                        <h6 class="sponsor-widget__title">Приглашение от:</h6>
+                        <a href="#" class="sponsor-widget__close js-widget-close">Закрыть</a>
+                    </div>
+                    <div class="sponsor-widget__content">
+                        <div class="sponsor-widget__image">
+                            {$photosponsor}
+                        </div>
+                        <div class="sponsor-widget__details">
+                            <ul>
+                                <li>
+                                    <img src="img/user.png" alt="User Icon">
+                                    <p>{$fiosponsor}</p>
+                                </li>
+                                <li>
+                                    <img src="img/mail.png" alt="Envelope Icon">
+                                    <p>{$emailsponsor}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sponsor Widget Section End -->
+
                 <div class="col-1-of-3">
                     <div class="header__packages">
                         <div class="header__packages--1">
@@ -89,7 +280,7 @@
                 </div>
             </div>
         </div>
-        <div class="header__carousel u-margin-top-huge u-margin-bottom-large">
+        <div class="header__carousel u-margin-top-huge u-margin-bottom-medium">
             <div class="company-slider owl-carousel owl-theme">
                 <div class="company-items">
                     <i class="fal fa-graduation-cap"></i>
@@ -139,10 +330,10 @@
     </header>
 
     <!-- Jquery JS -->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js" defer></script>
     <!-- Owl Carousel JS -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.min.js" defer></script>
     <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js" defer></script>
 </body>
 </html>

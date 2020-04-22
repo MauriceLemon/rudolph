@@ -8,6 +8,103 @@
         height: 5rem;
     }
 
+    /* Sponsor Widget CSS Start */
+    &__sponsor-widget {
+        width: -moz-max-content;
+        width: max-content;
+        margin-top: 30px;
+
+        &--fixed {
+            position: fixed;
+            bottom: 14%;
+            right: 3%;
+            width: auto;
+        }
+
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+
+        background: rgba($color-secondary-light, .9);
+        padding: 20px;
+        box-shadow: $shadow-small;
+        border-radius: 20px;
+        z-index: 999;
+
+        .sponsor-widget__title {
+            display: inline-block;
+            float: left;
+            font-size: 1.2rem;
+            color: rgba($color-white, .5);
+        }
+
+        .sponsor-widget__close {
+            display: inline-block;
+            float: right;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: $color-primary;
+            cursor: pointer;
+            margin-top: -10зч;
+        }
+
+        .sponsor-widget__content {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1rem;
+
+            .sponsor-widget__details {
+                ul {
+                    padding: 0;
+                    margin: 10px 0 0 10px;
+                    list-style-type: none;
+
+                    li {
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+
+                        p, a {
+                            display: inline-block;
+                            margin: 0;
+                            font-size: 14px;
+                        }
+
+                        img {
+                            height: 1.2rem;
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+
+            .sponsor-widget__image {
+                width: 55px;
+
+                img {
+                    border-radius: 50px;
+                    width: 55px;
+                }
+            }
+        }
+
+        @include respond(tab-land) {
+            &--fixed {
+                bottom: 23%;
+            }
+        }
+
+        @include respond(tab-port) {
+            &--fixed {
+                position: relative;
+                margin-bottom: 4rem;
+                right: 0;
+            }
+        }
+    }
+
+    /* Sponsor Widget CSS End */
+
     &__packages {
         position: relative;
         z-index: 99;
@@ -83,7 +180,7 @@
         position: relative;
         animation: moveInRight 600ms ease-out;
         text-align: center;
-        padding: 2rem;
+        padding: 3rem;
         z-index: 2;
 
         img {
@@ -105,7 +202,11 @@
         }
 
         @include respond(tab-port) {
+            padding-left: 4rem;
             margin-bottom: 6rem;
+            img {
+                transform: translate(-3rem, -10rem) rotate(-2deg);
+            }
         }
     }
 

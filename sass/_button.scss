@@ -16,6 +16,11 @@
         border: none;
         cursor: pointer;
 
+        a {
+            text-decoration: none;
+            color: $color-secondary-dark;
+        }
+
         @include respond(tab-port) {
             width: 100%;
         }

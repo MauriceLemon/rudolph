@@ -212,6 +212,10 @@ body {
   border: none;
   cursor: pointer;
 }
+.btn a, .btn:link a, .btn:visited a {
+  text-decoration: none;
+  color: #141627;
+}
 @media (max-width: 56.25em) {
   .btn, .btn:link, .btn:visited {
     width: 100%;

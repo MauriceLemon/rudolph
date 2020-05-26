@@ -7,6 +7,16 @@
 			event.preventDefault();
 			$(".header__sponsor-widget--fixed").hide();
 		});
+
+		$('.popup-vimeo').magnificPopup({
+			disableOn:300,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+
+			fixedContentPos: false
+		});
 	
 		//Company Slider JS
 		$('.company-slider').owlCarousel({

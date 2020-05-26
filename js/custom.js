@@ -17,6 +17,13 @@
 
 			fixedContentPos: false
 		});
+
+		var $placeholder = $("#placeholder-image");
+		$placeholder.click(function () {
+			$placeholder.hide();
+		});
+
+
 	
 		//Company Slider JS
 		$('.company-slider').owlCarousel({
